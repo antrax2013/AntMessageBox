@@ -15,7 +15,7 @@ var AntMessageBox = function () {
     var _initWithTarget = false
         
 	//this.initWithTarget = function() { return _initWithTarget},
-    this.intDialogBox = function (p_title, p_elmt) {
+    this.initDialogBox = function (p_title, p_elmt) {
         this.box = (p_elmt != undefined && p_elmt.trim() != "") ? $(p_elmt) : null;
         this.title = (p_title != undefined)? p_title:"";
 
@@ -41,7 +41,7 @@ var AntMessageBox = function () {
     },
 
 	this.MsgDialogBox = function (p_content, p_modal) {
-	    if (_initWithTarget == false) this.intDialogBox((this.title != null && this.title.length)? this.title:"Info");
+	    if (_initWithTarget == false) this.initDialogBox((this.title != null && this.title.length)? this.title:"Info");
 	    this.box.html(p_content);
 	    this.box.dialog({ dialogClass: "info" });
 	    this.box.dialog("option", "modal", p_modal==true);
@@ -49,7 +49,7 @@ var AntMessageBox = function () {
 	}
 
     this.AlertDialogBox = function (p_content, p_ok_click_callback, p_label_ok) {
-        if (_initWithTarget == false) this.intDialogBox((this.title != null && this.title.length)? this.title:"Alert");
+        if (_initWithTarget == false) this.initDialogBox((this.title != null && this.title.length)? this.title:"Alert");
         this.box.html(p_content);
         this.box.dialog("option", "modal", true);
         this.box.dialog({ dialogClass: "alert" });
@@ -64,7 +64,7 @@ var AntMessageBox = function () {
     }
 
     this.ConfirmDialogBox = function (p_content, p_ok_click_callback, p_cancel_click_callback, p_label_ok, label_cancel) {
-        if (_initWithTarget == false) this.intDialogBox((this.title != null && this.title.length)? this.title:"Confirm");
+        if (_initWithTarget == false) this.initDialogBox((this.title != null && this.title.length)? this.title:"Confirm");
         this.box.html(p_content);
         this.box.dialog("option", "modal", true);
         this.box.dialog("option", "buttons",
