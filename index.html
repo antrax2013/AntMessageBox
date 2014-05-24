@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8" />
+        <title>Samples of AntMessageBox - AntProduction</title>		
+		<link href="public/css/style.css" rel="stylesheet">
+	</head>
+ 
+    <body>
+		<header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>
+					<h1 class="site-title">AntMessageBox library</h1>                    
+                </p>
+                <span id="MessageBox"></span>
+            </div>
+            <div class="float-right">
+                <img src="public/images/logo-blue-135x35.png") alt="logo of AntProduction" />
+            </div>		
+		</header>
+		<div id="body">
+		<section class="content-wrapper main-content clear-fix">
+			<p>AntMessageBox, is a pre-define jQuery ui-dialog encapsulated in Javascript object. All AntMessageBoxes are able to contain simple and/or advanced html like images, forms, tables... and callbacks when fired events of buttons in the footer.
+			There are 3 avaibles types of AntMessageBox:
+			<ul>
+				<li><a href="#MsgDialogBox">MsgDialogBox</a>: basic info dialog box</li>
+				<li>AlertDialogBox: alert box like alert function of javascript. Callbacks could be specified on fired click event "ok" button.</li>
+				<li>ConfirmDialogBox: confirm box like confirm function of javascript. Callbacks could be specified on fired click event of "ok/cancel" buttons.</li>				
+			</ul>
+			Type is defiend when the MessageBox is displayed. Somes settings of each types are avaible to cutstomise them.
+			</p>
+			<p>Try it with somes demo links ...</p>
+			
+			<h2>AntMessageBox</h2>
+			It's the javascript object with fields and methods
+			<table>
+				<tr>
+					<th>Fields</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>title <span class="type">[string]</span></td>
+					<td><span class="description">The title of the message box</span></td>					
+				</tr>
+				<tr>
+					<td>box <span class="type">[object]</span></td>
+					<td><span class="description">The container of the jQuery-ui-dialog</span></td>					
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<th>Methods</th>
+					<th colspan='2'>Parameters</th>
+				</tr>
+				<!-- intDialogBox -->
+				<tr>
+					<td rowspan='2'>
+						<strong>intDialogBox</strong>
+						<br />Method to define custom settings.
+					</td>
+					<td>p_title <span class="type">[optionnal string]</span></td>
+					<td><span class="description">The title of the message box. When message box is deplayed, if title is empty, a default title is used.</span></td>					
+				</tr>
+				<tr>
+					<td>p_elmt <span class="type">[string]</span></td>
+					<td><span class="description">String to send to jQuery to select</span></td>					
+				</tr>
+				<!-- MsgDialogBox -->
+				<tr>
+					<td rowspan='2'>
+						<strong>MsgDialogBox</strong>
+						<br />Display basic message box.
+					</td>
+					<td>p_content <span class="type">[string]</span></td>
+					<td><span class="description">The html content</span></td>					
+				</tr>
+				<tr>
+					<td>p_modal <span class="type">[optionnal boolean]</span></td>
+					<td><span class="description">Optionnal boolean, false by default, define if the message box is modal or not</span></td>					
+				</tr>
+				<!-- AlertDialogBox -->
+				<tr>
+					<td rowspan='3'>
+						<strong>AlertDialogBox</strong>
+						<br />Modal dialog box like alert function of javascript.
+					</td>
+					<td>p_content <span class="type">[string]</span></td>
+					<td><span class="description">The html content</span></td>					
+				</tr>
+				<tr>
+					<td>p_ok_click_callback <span class="type">[optionnal anonymous function]</span></td>
+					<td><span class="description">Optionnal anonymous function call on click event of button "ok" fired</span></td>					
+				</tr>
+				<tr>
+					<td>p_label_ok <span class="type">[optionnal string]</span></td>
+					<td><span class="description">Optionnal parameter to change the label of button. "Ok" by default</span></td>					
+				</tr>
+				<!-- ConfirmDialogBox -->
+				<tr>
+					<td rowspan='5'>
+						<strong>ConfirmDialogBox</strong>
+						<br />Modal dialog box like confirm function of javascript.
+					</td>
+					<td>p_content <span class="type">[string]</span></td>
+					<td><span class="description">The html content</span></td>					
+				</tr>
+				<tr>
+					<td>p_ok_click_callback <span class="type">[optionnal anonymous function]</span></td>
+					<td><span class="description">Optionnal anonymous function call on click event of button "ok" fired</span></td>					
+				</tr>
+				<tr>
+					<td>p_cancel_click_callback <span class="type">[optionnal anonymous function]</span></td>
+					<td><span class="description">Optionnal anonymous function call on click event of button "cancel" fired</span></td>					
+				</tr>
+				<tr>
+					<td>p_label_ok <span class="type">[optionnal string]</span></td>
+					<td><span class="description">Optionnal parameter to change the label of button. "Ok" by default</span></td>					
+				</tr>
+				<tr>
+					<td>p_label_cancel <span class="type">[optionnal string]</span></td>
+					<td><span class="description">Optionnal parameter to change the label of button. "Cancel" by default</span></td>					
+				</tr>
+			</table>
+
+			<h2 id="MsgDialogBox">MsgDialogBox Samples:</h2>
+			<table>
+				<tr>
+					<td>Open MsgDialogBox on button click event</td>
+					<td><a href="samples/MsgDialogBox/MsgDialogBox.html" target="_blank">Try it</a></td>					
+				</tr>
+				<tr>
+					<td>Open modal MsgDialogBox on button click event</td>
+					<td><a href="samples/MsgDialogBox/Modal_MsgDialogBox.html" target="_blank">Try it</a></td>					
+				</tr>
+				<tr>
+					<td>Open modal MsgDialogBox, on button click event, with advanced settings and advanced content</td>
+					<td><a href="samples/MsgDialogBox/Modal_AdvancedContent_MsgDialogBox.html" target="_blank">Try it</a></td>					
+				</tr>
+			</table>
+		</section>
+		</div>
+		<footer>Copyright © 2014 AntProduction.</footer>
+    </body>
+</html>

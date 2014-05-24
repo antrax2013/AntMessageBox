@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8" />
+        <title>Modal MsgDialogBox with advanced setings and advanced html content - AntProduction</title>
+		
+		<!-- hightLight Syntaxe -->
+		<link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
+		<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+		
+		<link href="../../public/css/style.css" rel="stylesheet">		
+		<link href="../../public/themes/custom-theme/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
+				
+		<script type="text/javascript" src="../../public/js/libs/external-libs/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="../../public/js/libs/external-libs/jquery-ui-1.10.4.min.js"></script>
+		<script type="text/javascript" src="../../public/js/libs/AntMessageBox.min.js"></script>
+		<script>
+			//Sources code hightLight syntaxe
+			hljs.initHighlightingOnLoad();
+			
+			$(document).ready(function() {
+				//To use advanced settings, you must to define var.
+				var msg = new AntMessageBox();			
+			
+				$("#open").click(function () {
+					//Variables to AntMessageBox
+					var content = "<article style='width: 650px'><p style='display: inline-block; width:48%'>Nec piget dicere avide magis hanc insulam populum Romanum invasisse quam iuste. Ptolomaeo enim rege foederato nobis et socio ob aerarii nostri angustias iusso sine ulla culpa proscribi ideoque hausto veneno voluntaria morte deleto et tributaria facta est et velut hostiles eius exuviae classi inpositae in urbem advectae sunt per Catonem, nunc repetetur ordo gestorum.</p><div style='display: inline-block; width:25%'><img src='../../public/images/ecran.jpg' alt='screen' /><br /><a href='../../index.html'><< retun to list of samples</a></div></article>";
+					var title ="My title";
+					var target_element_id = "#zone"; //you can use all selector's of jQuery to select target of content of MsgDialogBox
+					var is_modal = 'true';
+					
+					//Message box initialized with html content					
+					msg.intDialogBox(title, target_element_id);
+					
+					msg.MsgDialogBox(content, is_modal);
+				});				
+			});
+		</script>
+	</head>
+ 
+    <body>
+        <header>
+			<div class="content-wrapper">
+				<div class="float-left">
+					<p>
+						<h1 class="site-title">AntMessageBox library</h1>                    
+					</p>
+					<span id="MessageBox"></span>
+				</div>
+				<div class="float-right">
+					<img src="../../public/images/logo-blue-135x35.png") alt="logo of AntProduction" />
+				</div>
+			</div>
+		</header>
+		<div id="body">
+			<section class="content-wrapper main-content clear-fix">
+			<div id="bloc_page">
+			<h2>Modal MsgDialogBox with advanced settings and advanced content</h2>
+			<p>The content of MsgDialogBox could be every html content: text, form, table ...
+			It's possible to define your own title or html.
+			</p>			
+			<button id="open">Open Message Box</button>
+			
+			<div id="zone" ></div>
+			
+			<h2>Source Code</h2>
+			<pre><code style="background-color:#fff">
+$(document).ready(function() {
+	//To use advanced settings, you must to define var.
+	var msg = new AntMessageBox();
+	
+	$("#open").click(function () {
+		//Variables to AntMessageBox
+					
+		var content = "&lt;article style='width: 650px'&gt;&lt;p style='display: inline-block; width:48%'&gt;Nec piget dicere avide magis hanc .... &lt;/article&gt;"
+		var title ="My title";
+		var target_element_id = "#zone"; //you can use all selector's of jQuery to select target of content of MsgDialogBox
+		var is_modal = 'true';
+					
+		//Message box initialized with html content					
+		msg.intDialogBox(title, target_element_id);					
+		msg.MsgDialogBox(content, is_modal);
+	});
+});	
+						</code>
+					</pre>
+				</div>
+			</section>
+		</div>
+		<footer>Copyright © 2014 AntProduction.</footer>
+    </body>
+</html>
