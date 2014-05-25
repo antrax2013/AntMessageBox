@@ -50,7 +50,20 @@ header, footer {
     background-image: linear-gradient(top, #696969 0%,#363636 95%,#313131 97%,#252525 100%);
 }
 
+strong, mark, em {
+	color: #333;
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+	font-weight: normal;
+}
 
+.blue, .type { color:#0500fd; }
+
+strong.bold {
+	font-weight: bold;
+}
 
 mark {
     background-color: #a6dbed;
@@ -557,10 +570,6 @@ tr.pager td {
 	font-style: italic;
 	font-size: 0.9em;
 	display: inline-block;
-}
-
-.type {
-	color: #00A;
 }
 
 /********************

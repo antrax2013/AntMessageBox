@@ -1,5 +1,6 @@
 ﻿/*! AntMessageBox V0.13
 * Copyright (c) 2014 AntProduction
+* http://antproduction.free.fr/AntMessageBox
 * https://github.com/antrax2013/AntMessageBox
 *
 * GPL license:
