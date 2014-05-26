@@ -163,12 +163,21 @@ footer {
 
 /* site title
 ----------------------------------------------------------*/
-.site-title {
-    color: #d3dce0;
+.site-title, .library-version {    
     font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
-    font-size: 2.3em;
     margin: 0;
+	display:inline;
 }
+.site-title {
+	color: #d3dce0;
+	font-size: 2.3em;
+}
+
+.library-version {
+	color: #fff;
+	font-size: .8em;
+}
+
 
     .site-title a, .site-title a:hover, .site-title a:active {
         background: none;

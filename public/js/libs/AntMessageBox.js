@@ -64,7 +64,7 @@ var AntMessageBox = function () {
         this.box.dialog("open");
     }
 
-    this.ConfirmDialogBox = function (p_content, p_ok_click_callback, p_cancel_click_callback, p_label_ok, label_cancel) {
+    this.ConfirmDialogBox = function (p_content, p_ok_click_callback, p_cancel_click_callback, p_label_ok, p_label_cancel) {
         if (_initWithTarget == false) this.initDialogBox((this.title != null && this.title.length)? this.title:"Confirm");
         this.box.html(p_content);
         this.box.dialog("option", "modal", true);
@@ -75,8 +75,8 @@ var AntMessageBox = function () {
                     click: function () { if (typeof (p_ok_click_callback) == 'function') { p_ok_click_callback(); } $(this).dialog("close"); }
                 },
                 {
-                    text: label_cancel != null ? p_label_ok : "Cancel",
-                    click: function () { if (typeof (p_cancel_click_callback) == 'function') { p_cancel_click_callback(); } $(this).dialog("close"); }
+                    text: p_label_cancel != null ? p_label_cancel : "Cancel",
+                    click: function () { if (typeof (p_cancel_click_callback) == 'function') { p_cancel_click_callback.call() } $(this).dialog("close"); }
                 }
             ]);
         this.box.dialog("open");
