@@ -4,6 +4,15 @@
 		<meta charset="utf-8" />
         <title>Samples of AntMessageBox - AntProduction</title>		
 		<link href="public/css/style.css" rel="stylesheet">
+		
+		<!-- hightLight Syntaxe -->
+		<link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
+		<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+		
+		<script>
+			//Sources code hightLight syntaxe
+			hljs.initHighlightingOnLoad();
+		</script>
 	</head>
  
     <body>
@@ -12,7 +21,7 @@
             <div class="float-left">
                 <p>
 					<h1 class="site-title">AntMessageBox library</h1>
-					<br/><span class="library-version">v0.13 - 05/24/2014</span>
+					<br/><span class="library-version">v0.20 - 05/29/2014</span>
                 </p>
                 
             </div>
@@ -25,9 +34,9 @@
 			<p>AntMessageBox, is a pre-define jQuery ui-dialog encapsulated in Javascript object. All AntMessageBoxes are able to contain simple and/or advanced html like images, forms, tables... and callbacks when fired events of buttons in the footer.
 			There are 3 avaibles types of AntMessageBox:
 			<ul>
-				<li><a href="#MsgDialogBox">MsgDialogBox</a>: basic info dialog box</li>
-				<li>AlertDialogBox: alert box like alert function of javascript. Callbacks could be specified on fired click event "ok" button.</li>
-				<li>ConfirmDialogBox: confirm box like confirm function of javascript. Callbacks could be specified on fired click event of "ok/cancel" buttons.</li>				
+				<li><a href="#Samples">MsgDialogBox</a>: basic info dialog box</li>
+				<li><a href="#Samples">AlertDialogBox</a>: alert box like alert function of javascript. Callbacks could be specified on fired click event "ok" button.</li>
+				<li><a href="#Samples">ConfirmDialogBox</a>: confirm box like confirm function of javascript. Callbacks could be specified on fired click event of "ok/cancel" buttons.</li>				
 			</ul>
 			Type is defiend when the MessageBox is displayed. Somes settings of each types are avaible to cutstomise them.
 			</p>
@@ -46,7 +55,20 @@
 				</tr>
 				<tr>
 					<td>box <span class="type">[object]</span></td>
-					<td><span class="description">The container of the jQuery-ui-dialog</span></td>					
+					<td>
+						<span class="description">The container of the jQuery-ui-dialog. Evry parameters of jQuery ui-dialog are avaibles like this:</span>
+						<pre><code>sample : MyDialog.box.dialog( "option", "modal", true );</pre></code>						
+					</td>					
+				</tr>
+				<tr>
+					<td>callbackOkParams <span class="type">[object]</span></td>
+					<td><span class="description">An object to give parameters to callback function will fire on click event of "ok" buttons.</span>
+						<br /><pre><code>Usage : MyDialog.callbacksOkParams = {"first-name":"McQueen", "last-name":"Flash"}</pre></code>
+					</td>					
+				</tr>
+				<tr>
+					<td>callbackCancelParams <span class="type">[object]</span></td>
+					<td><span class="description">An object to give parameters to callback function will fire on click event of "cancel" buttons</span></td>					
 				</tr>
 			</table>
 			<table>
@@ -58,7 +80,7 @@
 				<tr>
 					<td rowspan='2'>
 						<strong>initDialogBox</strong>
-						<br />Method to define custom settings.
+						<br /><span class="description">Method to define custom settings.</span>
 					</td>
 					<td>p_title <span class="type">[optionnal string]</span></td>
 					<td><span class="description">The title of the message box. When message box is deplayed, if title is empty, a default title is used.</span></td>					
@@ -71,9 +93,9 @@
 				<tr>
 					<td rowspan='2'>
 						<strong>MsgDialogBox</strong>
-						<br />Display basic message box.
+						<br /><span class="description">Display basic message box.</span>
 					</td>
-					<td>p_content <span class="type">[string]</span></td>
+					<td>p_content <span class="type">[optionnal string]</span></td>
 					<td><span class="description">The html content</span></td>					
 				</tr>
 				<tr>
@@ -84,9 +106,9 @@
 				<tr>
 					<td rowspan='3'>
 						<strong>AlertDialogBox</strong>
-						<br />Display modal dialog box like alert function of javascript.
+						<br /><span class="description">Display modal dialog box like alert function of javascript.</span>
 					</td>
-					<td>p_content <span class="type">[string]</span></td>
+					<td>p_content <span class="type">[optionnal string]</span></td>
 					<td><span class="description">The html content</span></td>					
 				</tr>
 				<tr>
@@ -101,9 +123,9 @@
 				<tr>
 					<td rowspan='5'>
 						<strong>ConfirmDialogBox</strong>
-						<br />Display modal dialog box like confirm function of javascript.
+						<br /><span class="description">Display modal dialog box like confirm function of javascript.</span>
 					</td>
-					<td>p_content <span class="type">[string]</span></td>
+					<td>p_content <span class="type">[optionnal string]</span></td>
 					<td><span class="description">The html content</span></td>					
 				</tr>
 				<tr>
@@ -124,7 +146,7 @@
 				</tr>
 			</table>
 
-			<h2 id="MsgDialogBox">Samples:</h2>
+			<h2 id="Samples">Samples:</h2>
 			<table>
 				<tr>
 					<th colspan="2">MsgDialogBox</th>
@@ -147,13 +169,42 @@
 				<tr>
 					<td>Open AlertDialogBox on button click event with callback function</td>
 					<td><a href="samples/AlertDialogBox/AlertDialogBox_with_callback.html" target="_blank">Try it</a></td>					
-				</tr>
+				</tr>				
 				<tr>
 					<th colspan="2">ConfirmDialogBox</th>
 				</tr>
 				<tr>
 					<td>Open ConfirmDialogBox on button click event with callbacks functions one of which is anonymous</td>
 					<td><a href="samples/ConfirmDialogBox/ConfirmDialogBox_with_callbacks.html" target="_blank">Try it</a></td>					
+				</tr>	
+				<tr>
+					<td>Turn ConfirmDialogBox into prompt dialog box</td>
+					<td><a href="samples/ConfirmDialogBox/ConfirmDialogBox_turned_into_prompt_dialog_box.html" target="_blank">Try it</a></td>					
+				</tr>				
+			</table>
+			
+			<h2 id="Samples">Tips:</h2>
+			<table>
+				<tr>
+					<td>
+						How to replace alert function javascript by AlertDialogBox ?
+						<pre><code>
+window.alert = function (content, callback) {
+    var MyDialog = new AntMessageBox();
+    MyDialog.AlertDialogBox(content, callback);
+}
+						</code></pre>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						How to access to "Ok" button of dialog box ?
+						<br />
+						<span class="description">Buttons are in array. The first button is "Ok" and second is "Cancel". You can acces to "Ok" button like this: </span>
+						<pre><code>
+MyDialog.box.dialog("option").buttons[0];
+						</code></pre>						
+					</td>
 				</tr>
 			</table>
 		</section>
