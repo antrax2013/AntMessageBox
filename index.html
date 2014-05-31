@@ -26,21 +26,20 @@
                 
             </div>
             <div class="float-right">
-                <img src="public/images/logo-blue-135x35.png") alt="logo of AntProduction" />
+                <a href="http://antproduction.free.fr/" border="0"><img src="public/images/logo-blue-135x35.png") alt="logo of AntProduction" /></a>
             </div>		
 		</header>
 		<div id="body">
 		<section class="content-wrapper main-content clear-fix">
-			<p>AntMessageBox, is a pre-define jQuery ui-dialog encapsulated in Javascript object. All AntMessageBoxes are able to contain simple and/or advanced html like images, forms, tables... and callbacks when fired events of buttons in the footer.
-			There are 3 avaibles types of AntMessageBox:
+			<p>AntMessageBox, is a pre-defined jQuery ui-dialog encapsulated in JavaScript object. AntMessageBoxes are ables to contain html (v4 or v5) and optionnal callback binded functions on click event of buttons.
 			<ul>
+				3 available types of AntMessageBox :
 				<li><a href="#Samples">MsgDialogBox</a>: basic info dialog box</li>
 				<li><a href="#Samples">AlertDialogBox</a>: alert box like alert function of javascript. Callbacks could be specified on fired click event "ok" button.</li>
 				<li><a href="#Samples">ConfirmDialogBox</a>: confirm box like confirm function of javascript. Callbacks could be specified on fired click event of "ok/cancel" buttons.</li>				
 			</ul>
-			Type is defiend when the MessageBox is displayed. Somes settings of each types are avaible to cutstomise them.
+			Type is defined on display of MessageBox. Somes settings of each types are avaible to cutstomise them. <a href="#Samples">Demo</a>
 			</p>
-			<p>Try it with somes demo links ...</p>
 			
 			<h2>AntMessageBox</h2>
 			It's the javascript object with fields and methods
@@ -56,19 +55,19 @@
 				<tr>
 					<td>box <span class="type">[object]</span></td>
 					<td>
-						<span class="description">The container of the jQuery-ui-dialog. Evry parameters of jQuery ui-dialog are avaibles like this:</span>
+						<span class="description">The container of the <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery-ui-dialog</a>. Parameters of jQuery ui-dialog are avaibles</span>
 						<pre><code>sample : MyDialog.box.dialog( "option", "modal", true );</pre></code>						
 					</td>					
 				</tr>
 				<tr>
 					<td>callbackOkParams <span class="type">[object]</span></td>
-					<td><span class="description">An object to give parameters to callback function will fire on click event of "ok" buttons.</span>
-						<br /><pre><code>Usage : MyDialog.callbacksOkParams = {"first-name":"McQueen", "last-name":"Flash"}</pre></code>
+					<td><span class="description">An object to store parameters to fired callback function on click event of "ok" button</span>
+						<br /><pre><code>usage : MyDialog.callbacksOkParams = {"first-name":"McQueen", "last-name":"Flash"}</pre></code>
 					</td>					
 				</tr>
 				<tr>
 					<td>callbackCancelParams <span class="type">[object]</span></td>
-					<td><span class="description">An object to give parameters to callback function will fire on click event of "cancel" buttons</span></td>					
+					<td><span class="description">An object to store parameters to fired callback function on click event of "cancel" button</span></td>					
 				</tr>
 			</table>
 			<table>
@@ -86,7 +85,7 @@
 					<td><span class="description">The title of the message box. When message box is deplayed, if title is empty, a default title is used.</span></td>					
 				</tr>
 				<tr>
-					<td>p_elmt <span class="type">[string]</span></td>
+					<td>p_elmt <span class="type">[optionnal string]</span></td>
 					<td><span class="description">String to send to jQuery to select</span></td>					
 				</tr>
 				<!-- MsgDialogBox -->
@@ -146,7 +145,7 @@
 				</tr>
 			</table>
 
-			<h2 id="Samples">Samples:</h2>
+			<h2 id="Samples">Samples</h2>
 			<table>
 				<tr>
 					<th colspan="2">MsgDialogBox</th>
@@ -183,7 +182,7 @@
 				</tr>				
 			</table>
 			
-			<h2 id="Samples">Tips:</h2>
+			<h2 id="Samples">Tips</h2>
 			<table>
 				<tr>
 					<td>
