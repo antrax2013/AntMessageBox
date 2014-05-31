@@ -10,7 +10,7 @@ AntMessageBox, is a pre-defined jQuery ui-dialog encapsulated in Javascript obje
 
 <a href="http://antproduction.free.fr/AntMessageBox" target="_blank">Home page</a>
 
-To ask questions, please use issue.
+Have a question about AntMessageBox ? Please use GitHub Issue. 
 
 Release Note: V0.2 - 05/29/2014
 =============
