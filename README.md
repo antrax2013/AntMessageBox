@@ -14,6 +14,6 @@ Have a question about AntMessageBox ? Please use GitHub Issue.
 
 Release Note: V0.13 - 05/24/2014
 =============
-- When AntMessageBox is displayed without call intDialogBox, the div insert into the DOM is not removed on destroy event. [fixed]
+- When AntMessageBox is displayed without call initDialogBox, the div insert into the DOM is not removed on destroy event. [fixed]
 - Impossible to change title with intDialogBox fonction. [fixed]
 
