@@ -10,6 +10,15 @@
 		<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
 		
 		<script>
+
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-51652340-1', 'free.fr');
+			  ga('send', 'pageview');
+
 			//Sources code hightLight syntaxe
 			hljs.initHighlightingOnLoad();
 		</script>
@@ -17,197 +26,204 @@
  
     <body>
 		<header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p>
-					<h1 class="site-title">AntMessageBox library</h1>
-					<br/><span class="library-version">v0.20 - 05/29/2014</span>
-                </p>
-                
-            </div>
-            <div class="float-right">
-                <a href="http://antproduction.free.fr/" border="0"><img src="public/images/logo-blue-135x35.png") alt="logo of AntProduction" /></a>
-            </div>		
+			<section class="content-wrapper">
+				<div class="float-left">
+					<p>
+						<h1 class="site-title">AntMessageBox library</h1>
+						<br/><span class="library-version">v0.20 - 05/29/2014</span>
+					</p>
+					
+				</div>
+				<div class="float-right">
+					<a href="http://antproduction.free.fr/" border="0"><img src="public/images/logo-blue-135x35.png") alt="logo of AntProduction" /></a>
+				</div>
+			</section>
 		</header>
-		<div id="body">
-		<section class="content-wrapper main-content clear-fix">
-			<p>AntMessageBox, is a pre-defined jQuery ui-dialog encapsulated in JavaScript object. AntMessageBoxes are ables to contain html (v4 or v5) and optionnal callback binded functions on click event of buttons.
-			<ul>
-				3 available types of AntMessageBox :
-				<li><a href="#Samples">MsgDialogBox</a>: basic info dialog box</li>
-				<li><a href="#Samples">AlertDialogBox</a>: alert box like alert function of javascript. Callbacks could be specified on fired click event "ok" button.</li>
-				<li><a href="#Samples">ConfirmDialogBox</a>: confirm box like confirm function of javascript. Callbacks could be specified on fired click event of "ok/cancel" buttons.</li>				
-			</ul>
-			Type is defined on display of MessageBox. Somes settings of each types are avaible to cutstomise them. <a href="#Samples">Demo</a>
-			</p>
+		<article class="main-content clear-fix" id="body">
+			<section class="content-wrapper">
+				<p>
+					<strong>AntMessageBox</strong>, is a pre-defined jQuery ui-dialog encapsulated in JavaScript object. AntMessageBoxes are ables to contain html (v4 or v5) and optionnal callback binded functions on click event of buttons.
+					<ul>
+						3 available types of <strong>AntMessageBox</strong> :
+						<li><a href="#Samples">MsgDialogBox</a>: basic info dialog box</li>
+						<li><a href="#Samples">AlertDialogBox</a>: alert box like alert function of javascript. Callbacks could be specified on fired click event "ok" button.</li>
+						<li><a href="#Samples">ConfirmDialogBox</a>: confirm box like confirm function of javascript. Callbacks could be specified on fired click event of "ok/cancel" buttons.</li>				
+					</ul>
+					Type is defined on display of MessageBox. Somes settings of each types are avaible to cutstomise them. <a href="#Samples">Demo</a>
+				</p>
+			</section>
 			
-			<h2>AntMessageBox</h2>
-			It's the javascript object with fields and methods
-			<table>
-				<tr>
-					<th>Fields</th>
-					<th>Description</th>
-				</tr>
-				<tr>
-					<td>title <span class="type">[string]</span></td>
-					<td><span class="description">The title of the message box</span></td>					
-				</tr>
-				<tr>
-					<td>box <span class="type">[object]</span></td>
-					<td>
-						<span class="description">The container of the <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery-ui-dialog</a>. Parameters of jQuery ui-dialog are avaibles</span>
-						<pre><code>sample : MyDialog.box.dialog( "option", "modal", true );</pre></code>						
-					</td>					
-				</tr>
-				<tr>
-					<td>callbackOkParams <span class="type">[object]</span></td>
-					<td><span class="description">An object to store parameters to fired callback function on click event of "ok" button</span>
-						<br /><pre><code>usage : MyDialog.callbacksOkParams = {"first-name":"McQueen", "last-name":"Flash"}</pre></code>
-					</td>					
-				</tr>
-				<tr>
-					<td>callbackCancelParams <span class="type">[object]</span></td>
-					<td><span class="description">An object to store parameters to fired callback function on click event of "cancel" button</span></td>					
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<th>Methods</th>
-					<th colspan='2'>Parameters</th>
-				</tr>
-				<!-- intDialogBox -->
-				<tr>
-					<td rowspan='2'>
-						<strong>initDialogBox</strong>
-						<br /><span class="description">Method to define custom settings.</span>
-					</td>
-					<td>p_title <span class="type">[optionnal string]</span></td>
-					<td><span class="description">The title of the message box. When message box is deplayed, if title is empty, a default title is used.</span></td>					
-				</tr>
-				<tr>
-					<td>p_elmt <span class="type">[optionnal string]</span></td>
-					<td><span class="description">String to send to jQuery to select</span></td>					
-				</tr>
-				<!-- MsgDialogBox -->
-				<tr>
-					<td rowspan='2'>
-						<strong>MsgDialogBox</strong>
-						<br /><span class="description">Display basic message box.</span>
-					</td>
-					<td>p_content <span class="type">[optionnal string]</span></td>
-					<td><span class="description">The html content</span></td>					
-				</tr>
-				<tr>
-					<td>p_modal <span class="type">[optionnal boolean]</span></td>
-					<td><span class="description">Optionnal boolean, false by default, define if the message box is modal or not</span></td>					
-				</tr>
-				<!-- AlertDialogBox -->
-				<tr>
-					<td rowspan='3'>
-						<strong>AlertDialogBox</strong>
-						<br /><span class="description">Display modal dialog box like alert function of javascript.</span>
-					</td>
-					<td>p_content <span class="type">[optionnal string]</span></td>
-					<td><span class="description">The html content</span></td>					
-				</tr>
-				<tr>
-					<td>p_ok_click_callback <span class="type">[optionnal function]</span></td>
-					<td><span class="description">Optionnal function, or anonymous fonction, call on click event of button "ok" fired</span></td>					
-				</tr>
-				<tr>
-					<td>p_label_ok <span class="type">[optionnal string]</span></td>
-					<td><span class="description">Optionnal parameter to change the label of button. "Ok" by default</span></td>					
-				</tr>
-				<!-- ConfirmDialogBox -->
-				<tr>
-					<td rowspan='5'>
-						<strong>ConfirmDialogBox</strong>
-						<br /><span class="description">Display modal dialog box like confirm function of javascript.</span>
-					</td>
-					<td>p_content <span class="type">[optionnal string]</span></td>
-					<td><span class="description">The html content</span></td>					
-				</tr>
-				<tr>
-					<td>p_ok_click_callback <span class="type">[optionnal function]</span></td>
-					<td><span class="description">Optionnal function, or anonymous fonction, call on click event of button "ok" fired</span></td>					
-				</tr>
-				<tr>
-					<td>p_cancel_click_callback <span class="type">[optionnal function]</span></td>
-					<td><span class="description">Optionnal function, or anonymous fonction, call on click event of button "cancel" fired</span></td>					
-				</tr>
-				<tr>
-					<td>p_label_ok <span class="type">[optionnal string]</span></td>
-					<td><span class="description">Optionnal parameter to change the label of button. "Ok" by default</span></td>					
-				</tr>
-				<tr>
-					<td>p_label_cancel <span class="type">[optionnal string]</span></td>
-					<td><span class="description">Optionnal parameter to change the label of button. "Cancel" by default</span></td>					
-				</tr>
-			</table>
+			<section class="content-wrapper">
+				<h2>AntMessageBox</h2>
+				<p>It's the javascript object with fields and methods</p>
+				<table>
+					<tr>
+						<th>Fields</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>title <span class="type">[string]</span></td>
+						<td><span class="description">The title of the message box</span></td>					
+					</tr>
+					<tr>
+						<td>box <span class="type">[object]</span></td>
+						<td>
+							<span class="description">The container of the <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery-ui-dialog</a>. Parameters of jQuery ui-dialog are avaibles</span>
+							<pre><code>sample : MyDialog.box.dialog( "option", "modal", true );</pre></code>						
+						</td>					
+					</tr>
+					<tr>
+						<td>callbackOkParams <span class="type">[object]</span></td>
+						<td><span class="description">An object to store parameters to fired callback function on click event of "ok" button</span>
+							<br /><pre><code>usage : MyDialog.callbacksOkParams = {"first-name":"McQueen", "last-name":"Flash"}</pre></code>
+						</td>					
+					</tr>
+					<tr>
+						<td>callbackCancelParams <span class="type">[object]</span></td>
+						<td><span class="description">An object to store parameters to fired callback function on click event of "cancel" button</span></td>					
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<th>Methods</th>
+						<th colspan='2'>Parameters</th>
+					</tr>
+					<!-- intDialogBox -->
+					<tr>
+						<td rowspan='2'>
+							<strong>initDialogBox</strong>
+							<br /><span class="description">Method to define custom settings.</span>
+						</td>
+						<td>p_title <span class="type">[optionnal string]</span></td>
+						<td><span class="description">The title of the message box. When message box is deplayed, if title is empty, a default title is used.</span></td>					
+					</tr>
+					<tr>
+						<td>p_elmt <span class="type">[optionnal string]</span></td>
+						<td><span class="description">String to send to jQuery to select</span></td>					
+					</tr>
+					<!-- MsgDialogBox -->
+					<tr>
+						<td rowspan='2'>
+							<strong>MsgDialogBox</strong>
+							<br /><span class="description">Display basic message box.</span>
+						</td>
+						<td>p_content <span class="type">[optionnal string]</span></td>
+						<td><span class="description">The html content</span></td>					
+					</tr>
+					<tr>
+						<td>p_modal <span class="type">[optionnal boolean]</span></td>
+						<td><span class="description">Optionnal boolean, false by default, define if the message box is modal or not</span></td>					
+					</tr>
+					<!-- AlertDialogBox -->
+					<tr>
+						<td rowspan='3'>
+							<strong>AlertDialogBox</strong>
+							<br /><span class="description">Display modal dialog box like alert function of javascript.</span>
+						</td>
+						<td>p_content <span class="type">[optionnal string]</span></td>
+						<td><span class="description">The html content</span></td>					
+					</tr>
+					<tr>
+						<td>p_ok_click_callback <span class="type">[optionnal function]</span></td>
+						<td><span class="description">Optionnal function, or anonymous fonction, call on click event of button "ok" fired</span></td>					
+					</tr>
+					<tr>
+						<td>p_label_ok <span class="type">[optionnal string]</span></td>
+						<td><span class="description">Optionnal parameter to change the label of button. "Ok" by default</span></td>					
+					</tr>
+					<!-- ConfirmDialogBox -->
+					<tr>
+						<td rowspan='5'>
+							<strong>ConfirmDialogBox</strong>
+							<br /><span class="description">Display modal dialog box like confirm function of javascript.</span>
+						</td>
+						<td>p_content <span class="type">[optionnal string]</span></td>
+						<td><span class="description">The html content</span></td>					
+					</tr>
+					<tr>
+						<td>p_ok_click_callback <span class="type">[optionnal function]</span></td>
+						<td><span class="description">Optionnal function, or anonymous fonction, call on click event of button "ok" fired</span></td>					
+					</tr>
+					<tr>
+						<td>p_cancel_click_callback <span class="type">[optionnal function]</span></td>
+						<td><span class="description">Optionnal function, or anonymous fonction, call on click event of button "cancel" fired</span></td>					
+					</tr>
+					<tr>
+						<td>p_label_ok <span class="type">[optionnal string]</span></td>
+						<td><span class="description">Optionnal parameter to change the label of button. "Ok" by default</span></td>					
+					</tr>
+					<tr>
+						<td>p_label_cancel <span class="type">[optionnal string]</span></td>
+						<td><span class="description">Optionnal parameter to change the label of button. "Cancel" by default</span></td>					
+					</tr>
+				</table>
+			</section>
 
-			<h2 id="Samples">Samples</h2>
-			<table>
-				<tr>
-					<th colspan="2">MsgDialogBox</th>
-				</tr>
-				<tr>
-					<td>Open MsgDialogBox on button click event</td>
-					<td><a href="samples/MsgDialogBox/MsgDialogBox.html" target="_blank">Try it</a></td>					
-				</tr>
-				<tr>
-					<td>Open modal MsgDialogBox on button click event</td>
-					<td><a href="samples/MsgDialogBox/Modal_MsgDialogBox.html" target="_blank">Try it</a></td>					
-				</tr>
-				<tr>
-					<td>Open modal MsgDialogBox, on button click event, with advanced settings and advanced content</td>
-					<td><a href="samples/MsgDialogBox/Modal_AdvancedContent_MsgDialogBox.html" target="_blank">Try it</a></td>					
-				</tr>
-				<tr>
-					<th colspan="2">AlertDialogBox</th>
-				</tr>
-				<tr>
-					<td>Open AlertDialogBox on button click event with callback function</td>
-					<td><a href="samples/AlertDialogBox/AlertDialogBox_with_callback.html" target="_blank">Try it</a></td>					
-				</tr>				
-				<tr>
-					<th colspan="2">ConfirmDialogBox</th>
-				</tr>
-				<tr>
-					<td>Open ConfirmDialogBox on button click event with callbacks functions one of which is anonymous</td>
-					<td><a href="samples/ConfirmDialogBox/ConfirmDialogBox_with_callbacks.html" target="_blank">Try it</a></td>					
-				</tr>	
-				<tr>
-					<td>Turn ConfirmDialogBox into prompt dialog box</td>
-					<td><a href="samples/ConfirmDialogBox/ConfirmDialogBox_turned_into_prompt_dialog_box.html" target="_blank">Try it</a></td>					
-				</tr>				
-			</table>
+			<section class="content-wrapper">
+				<h2 id="Samples">Samples</h2>
+				<table>
+					<tr>
+						<th colspan="2">MsgDialogBox</th>
+					</tr>
+					<tr>
+						<td>Open <strong>MsgDialogBox</strong> on button click event</td>
+						<td><a href="samples/MsgDialogBox/MsgDialogBox.html" target="_blank">Try it</a></td>					
+					</tr>
+					<tr>
+						<td>Open modal <strong>MsgDialogBox</strong> on button click event</td>
+						<td><a href="samples/MsgDialogBox/Modal_MsgDialogBox.html" target="_blank">Try it</a></td>					
+					</tr>
+					<tr>
+						<td>Open modal <strong>MsgDialogBox</strong>, on button click event, with advanced settings and advanced content</td>
+						<td><a href="samples/MsgDialogBox/Modal_AdvancedContent_MsgDialogBox.html" target="_blank">Try it</a></td>					
+					</tr>
+					<tr>
+						<th colspan="2">AlertDialogBox</th>
+					</tr>
+					<tr>
+						<td>Open <strong>AlertDialogBox</strong> on button click event with callback function</td>
+						<td><a href="samples/AlertDialogBox/AlertDialogBox_with_callback.html" target="_blank">Try it</a></td>					
+					</tr>				
+					<tr>
+						<th colspan="2">ConfirmDialogBox</th>
+					</tr>
+					<tr>
+						<td>Open <strong>ConfirmDialogBox</strong> on button click event with callbacks functions one of which is anonymous</td>
+						<td><a href="samples/ConfirmDialogBox/ConfirmDialogBox_with_callbacks.html" target="_blank">Try it</a></td>					
+					</tr>	
+					<tr>
+						<td>Turn <strong>ConfirmDialogBox</strong> into prompt dialog box</td>
+						<td><a href="samples/ConfirmDialogBox/ConfirmDialogBox_turned_into_prompt_dialog_box.html" target="_blank">Try it</a></td>					
+					</tr>				
+				</table>
+			</section>
 			
-			<h2 id="Samples">Tips</h2>
-			<table>
-				<tr>
-					<td>
-						How to replace alert function javascript by AlertDialogBox ?
-						<pre><code>
+			<section class="content-wrapper">
+				<h2 id="Samples">Tips</h2>
+				<table>
+					<tr>
+						<td>
+							<p>How to replace alert function javascript by <strong>AlertDialogBox</strong> ?</p>
+							<pre><code>
 window.alert = function (content, callback) {
     var MyDialog = new AntMessageBox();
     MyDialog.AlertDialogBox(content, callback);
 }
-						</code></pre>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						How to access to "Ok" button of dialog box ?
-						<br />
-						<span class="description">Buttons are in array. The first button is "Ok" and second is "Cancel". You can acces to "Ok" button like this: </span>
-						<pre><code>
+							</code></pre>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>How to access to "Ok" button of dialog box ?</p>
+							<span class="description">Buttons are in array. The first button is "Ok" and second is "Cancel". You can acces to "Ok" button like this: </span>
+							<pre><code>
 MyDialog.box.dialog("option").buttons[0];
-						</code></pre>						
-					</td>
-				</tr>
-			</table>
-		</section>
-		</div>
+							</code></pre>						
+						</td>
+					</tr>
+				</table>
+			</section>
+		</article>
 		<footer>Copyright © 2014 AntProduction.</footer>
     </body>
 </html>

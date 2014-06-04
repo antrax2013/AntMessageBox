@@ -15,11 +15,19 @@
 		<script type="text/javascript" src="../../public/js/libs/external-libs/jquery-ui-1.10.4.min.js"></script>
 		<script type="text/javascript" src="../../public/js/libs/AntMessageBox.js"></script>
 		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51652340-1', 'free.fr');
+  ga('send', 'pageview');
+  
 			//Sources code hightLight syntaxe
 			hljs.initHighlightingOnLoad();
 			
 			$(document).ready(function() {
-				//To use advanced settings, you must to define var.
+				//To use advanced settings, you must define var.
 				var msg = new AntMessageBox();
 				var nb_callback = 0;				
 				
@@ -46,33 +54,33 @@
  
     <body>
         <header>
-			<div class="content-wrapper">
+			<section class="content-wrapper">
 				<div class="float-left">
 					<p>
-						<h1 class="site-title">AntMessageBox library</h1>                    
-					</p>
-					<span id="MessageBox"></span>
+						<h1 class="site-title">AntMessageBox libraries</h1>
+					</p>					
 				</div>
 				<div class="float-right">
-					<img src="../../public/images/logo-blue-135x35.png") alt="logo of AntProduction" />
+					<a href="http://antproduction.free.fr/" border="0"><img src="../../public/images/logo-blue-135x35.png") alt="logo of AntProduction" /></a>
 				</div>
-			</div>
+			</section>
 		</header>
-		<div id="body">
-			<section class="content-wrapper main-content clear-fix">
-			<div id="bloc_page">
-			<h2>ConfirmDialogBox with callback function</h2>
-			<p>When on click event of both button into footer of DialogBox fired, functions are called.</p>
-			<p>In this sample, I use an anonymous function on click event button "--" fired.
-			<p>NB: in parameters, the name of callback function is given without brackets. Callbacks functions are optionnal.</p>
-			<button id="open">Open Message Box</button>
+		<article class="main-content clear-fix" id="body">
+			<section class="content-wrapper">
+				<h2>ConfirmDialogBox with callback function</h2>
+				<p>When on click event of both button into footer of DialogBox fired, functions are called.</p>
+				<p>In this sample, I use an anonymous function on click event button "--" fired.
+				<p>NB: in parameters, the name of callback function is given without brackets. Callbacks functions are optionnal.</p>
+				<button id="open">Open Message Box</button>
+				
+				<div id="zone" ></div>
+			</section>
 			
-			<div id="zone" ></div>
-			
-			<h2>Source Code</h2>
-			<pre><code style="background-color:#fff">
+			<section class="content-wrapper">
+				<h2>Source Code</h2>
+				<pre><code style="background-color:#fff">
 $(document).ready(function() {
-	//To use advanced settings, you must to define var.
+	//To use advanced settings, you must define var.
 	var msg = new AntMessageBox();			
 		
 	var nb_callback = 0;
@@ -94,11 +102,10 @@ $(document).ready(function() {
 		msg.ConfirmDialogBox(content, increase_CB, function(){nb_callback--;}, label, "--");
 	});
 });	
-						</code>
-					</pre>
-				</div>
+					</code>
+				</pre>
 			</section>
-		</div>
+		</article>
 		<footer>Copyright © 2014 AntProduction.</footer>
     </body>
 </html>
