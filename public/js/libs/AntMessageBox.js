@@ -11,11 +11,11 @@
 */
 
 var AntMessageBox = function () {
-    this.box = null
-    this.title = null
-	this.callbackOkParams = []
-	this.callbackCancelParams = []
-    var _initWithTarget = false
+    this.box = null;
+    this.title = null;
+	this.callbackOkParams = [];
+	this.callbackCancelParams = [];
+    var _initWithTarget = false;
         
 	this.initDialogBox = function (p_title, p_elmt) {
         this.box = (p_elmt != undefined && p_elmt.trim() != "") ? $(p_elmt) : null;
@@ -42,7 +42,7 @@ var AntMessageBox = function () {
         });
          
 
-    },
+    }
 
 	this.MsgDialogBox = function (p_content, p_modal) {
 	    if (_initWithTarget == false) this.initDialogBox((this.title != null && this.title.length)? this.title:"Info");
@@ -89,7 +89,7 @@ var AntMessageBox = function () {
             [
                 {
                     text: p_label_ok != null ? p_label_ok : "Ok",
-                    click: function () { if (typeof (p_ok_click_callback) == 'function') { p_ok_click_callback(paramsOk); } box.dialog("close"); },
+                    click: function () { if (typeof (p_ok_click_callback) == 'function') { p_ok_click_callback(paramsOk); } box.dialog("close"); }
                 },
                 {
                     text: p_label_cancel != null ? p_label_cancel : "Cancel",
