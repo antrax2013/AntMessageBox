@@ -1,4 +1,4 @@
-﻿/*! AntMessageBox V0.2
+﻿/*! AntMessageBox V0.21
 * Copyright (c) 2014 AntProduction
 * http://antproduction.free.fr/AntMessageBox
 * https://github.com/antrax2013/AntMessageBox
@@ -16,10 +16,12 @@ var AntMessageBox = function () {
 	this.callbackOkParams = [];
 	this.callbackCancelParams = [];
     var _initWithTarget = false;
+    this.content= null;
         
-	this.initDialogBox = function (p_title, p_elmt) {
+	this.initDialogBox = function (p_title, p_elmt, p_content) {
         this.box = (p_elmt != undefined && p_elmt.trim() != "") ? $(p_elmt) : null;
         this.title = (p_title != undefined)? p_title:"";
+        if(p_content != null && p_content !=undefined) this.content=p_content;
 
         if (this.box == null || this.box.length == 0) {
             var id = 'AntMessageBox-'+new Date().getTime();
@@ -46,7 +48,8 @@ var AntMessageBox = function () {
 
 	this.MsgDialogBox = function (p_content, p_modal) {
 	    if (_initWithTarget == false) this.initDialogBox((this.title != null && this.title.length)? this.title:"Info");
-	    if(p_content != null || p_content !=undefined) this.box.html(p_content);
+	    if(p_content != null && p_content !=undefined) this.content=p_content;
+        this.box.html(this.content);
 	    this.box.dialog({ dialogClass: "info" });
 	    this.box.dialog("option", "modal", p_modal==true);
 	    this.box.dialog("open");
@@ -54,7 +57,8 @@ var AntMessageBox = function () {
 
     this.AlertDialogBox = function (p_content, p_ok_click_callback, p_label_ok) {
         if (_initWithTarget == false) this.initDialogBox((this.title != null && this.title.length)? this.title:"Alert");
-        if(p_content != null || p_content !=undefined) this.box.html(p_content);
+        if(p_content != null && p_content !=undefined) this.content=p_content;
+        this.box.html(this.content);
         this.box.dialog("option", "modal", true);
         this.box.dialog({ dialogClass: "alert" });
 		
@@ -79,7 +83,8 @@ var AntMessageBox = function () {
 
     this.ConfirmDialogBox = function (p_content, p_ok_click_callback, p_cancel_click_callback, p_label_ok, p_label_cancel) {
         if (_initWithTarget == false) this.initDialogBox((this.title != null && this.title.length)? this.title:"Confirm");
-        if(p_content != null || p_content !=undefined) this.box.html(p_content);
+        if(p_content != null && p_content !=undefined) this.content=p_content;
+        this.box.html(this.content);
         this.box.dialog("option", "modal", true);
 		
 		var paramsOk = ((this.callbackOkParams != [])?this.callbackOkParams:null);

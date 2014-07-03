@@ -22,7 +22,7 @@
 				<div class="float-left">
 				    <h1 class="site-title">AntMessageBox libraries</h1>
 					<br/>
-					<span class="library-version">05/29/2014 - New release of AntMessageBox library is avaliable !!</span>
+					<span class="library-version">07/03/2014 - New release of AntMessageBox library is avaliable !!</span>
 				</div>
 				<div class="float-right">
 					<a href="http://antproduction.free.fr/" title="AntProduction. Set once, daily use"><img src="public/images/antproduction-logo-blue-159x35.png" alt="logo of AntProduction. Set once, daily use" /></a>
@@ -31,6 +31,7 @@
 		</header>
 		<article class="main-content clear-fix" id="body">
 			<section class="content-wrapper">
+                <h2>About of AntMessageBox</h2>
 				<p>
 					<strong>AntMessageBox</strong>, is a pre-defined jQuery ui dialog encapsulated in JavaScript object. Dialog boxes from AntMessageBox are ables to contain html (v4 or v5) and optionnal callback binded functions on click event of buttons.
                 </p>
@@ -47,10 +48,12 @@
                 <p>
                     Type is defined on display of MessageBox. Somes settings of each types are avaible to cutstomise them. <a href="#Samples" title="Demo of AntMessageBox">Demo</a>
                 </p>
+                <br />
+                <p>Have a question about AntMessageBox ? <a href="https://github.com/antrax2013/AntMessageBox/issues" title="GitHub Issue of AntMessageBox">Please use GitHub Issue.</a></p>
 			</section>
 			
 			<section class="content-wrapper">
-				<h2>AntMessageBox</h2>
+				<h2>Documentation of AntMessageBox </h2>
 				<p>It's the javascript object with fields, jQuery ui dialog and methods</p>
 				<table>
 					<tr>
@@ -61,6 +64,10 @@
 						<td>title <span class="type">[string]</span></td>
 						<td><span class="description">The title of the message box</span></td>					
 					</tr>
+                    <tr>
+                        <td>content <span class="type">[string]</span></td>
+                        <td><span class="description">The html content</span></td>
+                    </tr>
 					<tr>
 						<td>box <span class="type">[object]</span></td>
 						<td>
@@ -86,7 +93,7 @@
 					</tr>
 					<!-- intDialogBox -->
 					<tr>
-						<td rowspan='2'>
+						<td rowspan='3'>
 							<strong>initDialogBox</strong>
 							<br /><span class="description">Method to define custom settings</span>
 						</td>
@@ -97,6 +104,10 @@
 						<td>p_elmt <span class="type">[optionnal string]</span></td>
 						<td><span class="description">String to send to jQuery to select the targeted element of DOM to recevice the dialog box</span></td>
 					</tr>
+                    <tr>
+                        <td>p_content <span class="type">[optionnal string]</span></td>
+                        <td><span class="description">The html content</span></td>
+                    </tr>
 					<!-- MsgDialogBox -->
 					<tr>
 						<td rowspan='2'>
@@ -156,7 +167,7 @@
 			</section>
 
 			<section class="content-wrapper">
-				<h2 id="Samples">Samples</h2>
+				<h2 id="Samples">Samples of AntMessageBox</h2>
 				<table>
 					<tr>
 						<th colspan="2">MsgDialogBox</th>
@@ -195,7 +206,7 @@
 			</section>
 			
 			<section class="content-wrapper">
-				<h2>Tips</h2>
+				<h2>Tips of AntMessageBox</h2>
 				<table>
 					<tr>
 						<td>

@@ -39,8 +39,8 @@
 					var label="++";
 					
 					//Message box initialized				
-					msg.initDialogBox(title, target_element_id);					
-					msg.AlertDialogBox(content, increase_CB, label);
+					msg.initDialogBox(title, target_element_id, content);
+                    msg.AlertDialogBox(null, increase_CB, label);
 				});				
 			});
 		</script>
@@ -88,8 +88,8 @@ $(document).ready(function() {
 		var label="++";
 		
 		//Message box initialized				
-		msg.initDialogBox(title, target_element_id);					
-		msg.AlertDialogBox(content, increase_CB, label);
+		msg.initDialogBox(title, target_element_id, content);
+		msg.AlertDialogBox(null, increase_CB, label);
 	});
 });	
 						</code>
