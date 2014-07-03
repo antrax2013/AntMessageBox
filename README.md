@@ -19,7 +19,7 @@ Release Note: V0.21 - 07/03/2014
 
 Next step : v0.3
 =============
-- Tranform into plugin jQuery
+- Transform into plugin jQuery
 - ex: 
 (function($) {
         $.fn.antMessageBox = function(params) { ... };
